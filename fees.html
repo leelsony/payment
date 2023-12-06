@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mall Parking</title>
+  </head>
+  <body>
+ <div class="jm">
+      <div>
+        <h1>Parking Fee</h1>
+        <label for="">Choose :</label>
+        <select id="jk">
+            <option value="Vehicle Type">Vehicle Type</option>
+          <option value="bicycle">Bicycle</option>
+          <option value="two-wheeler">Two-Wheeler</option>
+          <option value="car">Car</option>
+        </select>
+      </div>
+      <br />
+      <div>
+        <label for="">Parking hours:</label>
+        <select id="hours">
+            <option value="less">30mnt or 1hr</option>
+          <option value="less">1hr or 3hrs</option>
+          <option value="btwn">3hrs or 6hrs</option>
+          <option value="btwn1">6hrs or 7hrs</option>
+          <option value="more">7hrs or more</option>
+        </select>
+      </div>
+
+      <br/>
+
+      <button>Payable</button>
+      <br/>
+      <br/>
+
+      <div>
+        <label>Amount:</label>
+        <input type="text" id="output"/>
+      </div>
+    </div>
+    <script>
+      let button = document.querySelector("button");
+      button.addEventListener("click", display);
+
+      function display() {
+        let veh = document.querySelector("#jk");
+        let hours = document.querySelector("#hours");
+        let vehicle = veh.options[veh.selectedIndex].value;
+        let hrs = hours.options[hours.selectedIndex].value;
+        let output = document.querySelector("#output");
+
+
+        if (vehicle == "bicycle" && hrs == "less") 
+          output.value = "200 Rs";
+          else if (vehicle == "bicycle" && hrs == "btwn") 
+          output.value = "400 Rs";
+        else if (vehicle == "bicycle" && hrs == "btwn") 
+          output.value = "600 Rs";
+        else if (vehicle == "bicycle" && hrs == "btwn1")
+          output.value = "900 Rs";
+        else if (vehicle == "bicycle" && hrs == "more")
+          output.value = "1200 Rs";
+        else if (vehicle == "two-wheeler" || vehicle == "car")
+          output.value = "Invalid";
+      }
+    </script>
+        <style>
+            body {
+              background-color:purple;
+              padding: 0px;
+              margin: 0px
+            }
+            .jm {
+              margin-top: 180px;
+              border: 6px double rgb(219, 203, 214);
+              height: 300px;
+              width: 500px;
+              margin-left: 500px;
+              justify-content: center;
+            }
+            h1 {
+              margin-left: 150px;
+              text-decoration:underline;
+            }
+            label {
+              margin-left: 150px;
+      
+            }
+           
+            button {
+              margin-left: 150px;
+              background-color: rgb(19, 16, 19);
+              width: 100px;
+              border-radius: 10px;
+              color: white;
+            }
+            select {
+              border-radius: 100px;
+              height: 30px;
+              width: 100px;
+            }
+          </style>
+         
+  </body>
+</html>
